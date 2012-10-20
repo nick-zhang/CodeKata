@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BullsAndCowsTest
@@ -20,14 +20,14 @@ namespace BullsAndCowsTest
 
     public class DigitListGenerator
     {
-        public static ArrayList GetDigitListOf(int numberGiven)
+        public static List<int> GetDigitListOf(int numberGiven)
         {
             var a = numberGiven / 1000;
             var b = (numberGiven - a * 1000) / 100;
             var c = (numberGiven - a * 1000 - b * 100) / 10;
             var d = numberGiven % 10;
 
-            return new ArrayList {a, b, c, d};
+            return new List<int> {a, b, c, d};
         }
     }
 }
