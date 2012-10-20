@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using BullsAndCows;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BullsAndCowsTest
@@ -24,46 +24,6 @@ namespace BullsAndCowsTest
             var bullsAndCowsCalculator = new BullsAndCowsCalculator(actualNumber);
             var cows = bullsAndCowsCalculator.GetCows(givenNumber);
             Assert.AreEqual(0, cows);
-        }
-    }
-
-    public class BullsAndCowsCalculator
-    {
-        private readonly int actualNumber;
-
-        public BullsAndCowsCalculator(int actualNumber)
-        {
-            this.actualNumber = actualNumber;
-        }
-
-        public int GetBulls(int givenNumber)
-        {
-            var digitsOfGivenNumber = DigitListGenerator.GetDigitListOf(givenNumber);
-            var digitsOfActualNumber = DigitListGenerator.GetDigitListOf(actualNumber);
-            return CountDigitsWithSamePositionAndRemove(digitsOfGivenNumber, digitsOfActualNumber);
-        }
-
-        private static int CountDigitsWithSamePositionAndRemove(IList digitsOfGivenNumber, IList digitsOfActualNumber)
-        {
-            var bulls = 0;
-            for (var i = 0; i < digitsOfActualNumber.Count; i++)
-            {
-                if (digitsOfActualNumber[i].Equals(digitsOfGivenNumber[i]))
-                {
-                    bulls++;
-                    digitsOfActualNumber.RemoveAt(i);
-                    digitsOfGivenNumber.RemoveAt(i);
-                }
-            }
-            return bulls;
-        }
-
-        public int GetCows(int givenNumber)
-        {
-            var digitsOfGivenNumber = DigitListGenerator.GetDigitListOf(givenNumber);
-            var digitsOfActualNumber = DigitListGenerator.GetDigitListOf(actualNumber);
-            CountDigitsWithSamePositionAndRemove(digitsOfGivenNumber, digitsOfActualNumber);
-            return digitsOfGivenNumber.FindAll(digitsOfActualNumber.Contains).Count;
         }
     }
 }
