@@ -9,19 +9,14 @@ namespace BullsAndCows
             this.actualNumber = actualNumber;
         }
 
-        public int GetBulls(int givenNumber)
+        public BullsNCows GetBullsNCows(int givenNumber)
         {
             var digitsOfGivenNumber = DigitListGenerator.GetDigitListOf(givenNumber);
             var digitsOfActualNumber = DigitListGenerator.GetDigitListOf(actualNumber);
-            return DigitListGenerator.CountDigitsWithSamePositionAndRemove(digitsOfGivenNumber, digitsOfActualNumber);
-        }
+            var bulls = DigitListGenerator.CountDigitsWithSamePositionAndRemove(digitsOfGivenNumber, digitsOfActualNumber);
+            var cows = digitsOfGivenNumber.FindAll(digitsOfActualNumber.Contains).Count;
 
-        public int GetCows(int givenNumber)
-        {
-            var digitsOfGivenNumber = DigitListGenerator.GetDigitListOf(givenNumber);
-            var digitsOfActualNumber = DigitListGenerator.GetDigitListOf(actualNumber);
-            DigitListGenerator.CountDigitsWithSamePositionAndRemove(digitsOfGivenNumber, digitsOfActualNumber);
-            return digitsOfGivenNumber.FindAll(digitsOfActualNumber.Contains).Count;
+            return new BullsNCows(bulls, cows);
         }
     }
 }

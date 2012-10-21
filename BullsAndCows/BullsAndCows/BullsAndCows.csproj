@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BullsAndCowsCalculator.cs" />
+    <Compile Include="BullsNCows.cs" />
     <Compile Include="DigitListGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
