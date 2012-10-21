@@ -24,7 +24,7 @@ namespace BullsAndCowsTest
             const int actualNumber = 1678;
             var bullsAndCowsCalculator = new BullsAndCowsCalculator(actualNumber);
             var bullsNCows = bullsAndCowsCalculator.GetBullsNCows(givenNumber);
-            Assert.AreEqual(1, bullsNCows.Cows);
+            Assert.AreEqual(0, bullsNCows.Cows);
         }
     }
 }
