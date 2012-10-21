@@ -15,24 +15,6 @@ namespace BullsAndCows
             return new List<int> {a, b, c, d};
         }
 
-        public static int CountDigitsWithSamePositionAndRemove(int givenNumber, int actualNumber)
-        {
-            var digitsOfGivenNumber = GetDigitListOf(givenNumber);
-            var digitsOfActualNumber = GetDigitListOf(actualNumber);
-
-            var bulls = 0;
-            for (var i = 0; i < digitsOfActualNumber.Count; i++)
-            {
-                if (digitsOfActualNumber[i].Equals(digitsOfGivenNumber[i]))
-                {
-                    bulls++;
-                    digitsOfActualNumber.RemoveAt(i);
-                    digitsOfGivenNumber.RemoveAt(i);
-                }
-            }
-            return bulls;
-        }
-
         public static int CountDigitsWithSamePositionAndRemove(IList digitsOfGivenNumber, IList digitsOfActualNumber)
         {
             var bulls = 0;
