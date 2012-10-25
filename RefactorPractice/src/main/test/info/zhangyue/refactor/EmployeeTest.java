@@ -14,9 +14,18 @@ import static org.junit.Assert.assertThat;
  */
 public class EmployeeTest {
     @Test
-    public void shouldReturnCorrectPaymentByEmployeeType(){
+    public void shouldReturnCorrectPaymentForEngineer(){
         Employee engineer = new Employee(500, 0, 0, EmployeeType.ENGINEER);
         int payment = engineer.payment();
         assertThat("Payment is not correct.", payment, is(500));
     }
+
+    @Test
+    public void shouldReturnCorrectPaymentForSalesman(){
+        Employee engineer = new Employee(500, 100, 0, EmployeeType.SALESMAN);
+        int payment = engineer.payment();
+        assertThat("Payment is not correct.", payment, is(500-100));
+    }
+
+
 }
