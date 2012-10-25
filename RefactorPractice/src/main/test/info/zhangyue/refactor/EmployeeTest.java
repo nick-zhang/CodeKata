@@ -27,5 +27,10 @@ public class EmployeeTest {
         assertThat("Payment is not correct.", payment, is(500-100));
     }
 
-
+    @Test
+    public void shouldReturnCorrectPaymentForManager(){
+        Employee engineer = new Employee(500, 100, 100, EmployeeType.MANAGER);
+        int payment = engineer.payment();
+        assertThat("Payment is not correct.", payment, is(500+100));
+    }
 }
