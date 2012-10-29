@@ -40,7 +40,7 @@ public class CalculatorTest {
     @Test
     public void shouldAddedTwoNumbersCorrectly(){
         Calculator calculator = new Calculator();
-        assertThat(calculator.add(addend1, addend2), is(expectedResult));
+        assertThat("Add two addends error", calculator.add(addend1, addend2), is(expectedResult));
     }
 
 }
