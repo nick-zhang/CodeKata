@@ -26,7 +26,6 @@ public class CalculatorTest {
     private final int expectedResult;
 
     public CalculatorTest(int addend1, int addend2, int expectedResult) {
-
         this.addend1 = addend1;
         this.addend2 = addend2;
         this.expectedResult = expectedResult;
