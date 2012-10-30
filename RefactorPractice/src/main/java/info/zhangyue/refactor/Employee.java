@@ -11,29 +11,28 @@ public class Employee {
     private int monthlySummary;
     private int commission;
     private int bonus;
-    private EmployeeTypeCode employeeTypeCode;
+    private EmployeeType employeeType;
 
-    public Employee(int monthlySummary, int commission, int bonus, EmployeeTypeCode employeeTypeCode) {
+    public Employee(int monthlySummary, int commission, int bonus, EmployeeType employeeType) {
         this.monthlySummary = monthlySummary;
         this.commission = commission;
         this.bonus = bonus;
-        this.employeeTypeCode = employeeTypeCode;
+        this.employeeType = employeeType;
+    }
+
+    public int getMonthlySummary() {
+        return monthlySummary;
+    }
+
+    public int getCommission() {
+        return commission;
+    }
+
+    public int getBonus() {
+        return bonus;
     }
 
     public int payment(){
-        switch (getTypeCode()){
-            case ENGINEER:
-                return monthlySummary;
-            case SALESMAN:
-                return monthlySummary - commission;
-            case MANAGER:
-                return monthlySummary + bonus;
-            default:
-                throw new RuntimeException("Incorrect Employee");
-        }
-    }
-
-    private EmployeeTypeCode getTypeCode() {
-        return employeeTypeCode;
+        return employeeType.getPayment(this);
     }
 }
