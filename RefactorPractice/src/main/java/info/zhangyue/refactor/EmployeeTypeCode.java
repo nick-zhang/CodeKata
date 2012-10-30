@@ -7,7 +7,7 @@ package info.zhangyue.refactor;
  * Time: 10:02 AM
  * To change this template use File | Settings | File Templates.
  */
-public enum EmployeeType {
+public enum EmployeeTypeCode {
     ENGINEER,
     SALESMAN,
     MANAGER

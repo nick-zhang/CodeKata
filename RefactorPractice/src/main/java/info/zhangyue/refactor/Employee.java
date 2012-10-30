@@ -11,17 +11,17 @@ public class Employee {
     private int monthlySummary;
     private int commission;
     private int bonus;
-    private EmployeeType employeeType;
+    private EmployeeTypeCode employeeTypeCode;
 
-    public Employee(int monthlySummary, int commission, int bonus, EmployeeType employeeType) {
+    public Employee(int monthlySummary, int commission, int bonus, EmployeeTypeCode employeeTypeCode) {
         this.monthlySummary = monthlySummary;
         this.commission = commission;
         this.bonus = bonus;
-        this.employeeType = employeeType;
+        this.employeeTypeCode = employeeTypeCode;
     }
 
     public int payment(){
-        switch (getType()){
+        switch (getTypeCode()){
             case ENGINEER:
                 return monthlySummary;
             case SALESMAN:
@@ -33,7 +33,7 @@ public class Employee {
         }
     }
 
-    private EmployeeType getType() {
-        return employeeType;
+    private EmployeeTypeCode getTypeCode() {
+        return employeeTypeCode;
     }
 }
