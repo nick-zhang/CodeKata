@@ -22,15 +22,15 @@ public class EmployeeTest {
 
     @Test
     public void shouldReturnCorrectPaymentForSalesman(){
-        Employee engineer = new Employee(500, 100, 0, EmployeeType.SALESMAN);
-        int payment = engineer.payment();
+        Employee salesman = new Employee(500, 100, 0, EmployeeType.SALESMAN);
+        int payment = salesman.payment();
         assertThat("Payment is not correct.", payment, is(500-100));
     }
 
     @Test
     public void shouldReturnCorrectPaymentForManager(){
-        Employee engineer = new Employee(500, 100, 100, EmployeeType.MANAGER);
-        int payment = engineer.payment();
+        Employee manager = new Employee(500, 100, 100, EmployeeType.MANAGER);
+        int payment = manager.payment();
         assertThat("Payment is not correct.", payment, is(500+100));
     }
 }

@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertThat;
 import static org.junit.runners.Parameterized.*;
 
@@ -41,6 +42,7 @@ public class CalculatorTest {
     public void shouldAddedTwoNumbersCorrectly(){
         Calculator calculator = new Calculator();
         assertThat("Add two addends error", calculator.add(addend1, addend2), is(expectedResult));
+        assertThat("Add two addends error", calculator.add(1, 1), not(3));
     }
 
 }
