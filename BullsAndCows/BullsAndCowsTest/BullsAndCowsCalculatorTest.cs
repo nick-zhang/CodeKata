@@ -16,7 +16,6 @@ namespace BullsAndCowsTest
             Assert.AreEqual(1, bullsNCows.Bulls);
         }
 
-
         [TestMethod]
         public void ShouldReturnCorretNumberOfCows()
         {
